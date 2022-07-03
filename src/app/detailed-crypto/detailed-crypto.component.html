@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="card text-center p-2 my-2" *ngIf="ticketData">
+    <div class="card-body">
+      <h5 class="card-title">{{ticketData.an}}</h5>
+      <div>Ticket: {{ticketData.s}}</div>
+      <div>Price: {{ticketData.c}} $</div>
+      <div>Current coins in circulation {{ticketData.cs}}</div>
+      <div>Current Marketcap {{ticketData.c*ticketData.cs}}</div>
+      <a href="" class="card-link">Back to Menu</a>
+    </div>
+  </div>
+
+<div *ngIf="ticketData ===null">
+    <div>Binance API is currently down</div>
+</div>
