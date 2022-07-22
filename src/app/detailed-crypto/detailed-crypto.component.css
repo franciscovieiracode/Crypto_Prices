@@ -1,0 +1,9 @@
+.container{
+    height: 22rem;
+    width: 50%;
+}
+
+.img{
+    border-radius: 50%;
+    padding-top: 2%;
+}

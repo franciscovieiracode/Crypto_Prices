@@ -13,21 +13,24 @@ export class DetailedCryptoComponent implements OnInit {
   ticket:any
   data:any
   ticketData:any
+  notFound:boolean = false
 
   constructor(private router:Router,private GetAllData:GetPriceService) { }
 
   ngOnInit(): void {
     const coin = this.router.url.split('/').pop();
-    this.ticket=coin
+    this.ticket=coin    
     
     this.GetAllData.getAllInfo().subscribe((data:any)=>{
-      if(data)
+      if(data){
         this.data = data.data
 
         for(let i =0; i< this.data.length;i++){
           if(this.data[i].s === this.ticket)
-            this.ticketData = this.data[i]
+             return this.ticketData = this.data[i]
         }
+        this.notFound = true
+      }
     })
   }
   mainmenu(){
