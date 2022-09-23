@@ -5,9 +5,10 @@
         <img src="../../assets/img/{{ticket.toLowerCase()}}.jpg" class="img mt-4" height="50" alt="">
     </div>
     <div class="m-3">Ticket: {{ticketData.s}}</div>
+    {{ ticketData.c | number : '1.4-2'}}
     <div class="m-3">Price: {{ticketData.c}} $</div>
-    <div class="m-3">Current coins in circulation {{ticketData.cs}}</div>
-    <div class="m-3">Current Marketcap {{ticketData.c*ticketData.cs}}</div>
+    <div class="m-3">Current coins in circulation {{ ticketData.cs | number:'.0'}}</div>
+    <div class="m-3">Current Marketcap {{ticketData.c*ticketData.cs| number:'.2'}} $</div>
     <a href="" class="card-link">Back to Menu</a>
 </div>
  

@@ -24,6 +24,8 @@ export class HomePageComponent implements OnInit {
       if(cryptoDetails)
         this.sorted = cryptoDetails.sort((a:any, b:any) => parseFloat(b.price) - parseFloat(a.price));
         this.prices = this.sorted
+        console.log(this.prices);
+        
               
         setInterval(() => {         
           this.GetPriceService.getPrices().subscribe((cryptoDetails:any)=>{
